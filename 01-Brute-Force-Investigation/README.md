@@ -31,13 +31,13 @@ The policy was successfully applied using:
 
 `gpupdate /force`
 
-### 2. Controlled Failed Logon
-A controlled incorrect-password attempt was generated on the Windows host to validate that failed-logon auditing was working.
+### 2. Controlled Failed Logons
+Controlled incorrect-password attempts were generated on the Windows host to validate failed-logon auditing and practice investigating repeated authentication failures.
 
 ### 3. Event ID 4625 Identified
 Windows Security Event ID **4625** was observed.
 
-Key fields from the controlled event:
+Key fields from the investigated events:
 
 | Field | Observed Value |
 |---|---|
@@ -52,40 +52,62 @@ Key fields from the controlled event:
 | Authentication Package | Negotiate |
 | Process | `C:\Windows\System32\svchost.exe` |
 
-## Initial Analysis
+## Investigation Findings
 
-Event ID 4625 indicates that a logon request failed.
+Four Event ID 4625 records were observed during the controlled test.
 
-The observed event was generated intentionally as part of a controlled lab test. The source address was `127.0.0.1`, indicating localhost rather than an external source.
+| Time | Event ID | Logon Type | Source Address |
+|---|---:|---:|---|
+| 7:44:57 PM | 4625 | 2 | 127.0.0.1 |
+| 7:44:57 PM | 4625 | 2 | 127.0.0.1 |
+| 7:59:32 PM | 4625 | 2 | 127.0.0.1 |
+| 7:59:32 PM | 4625 | 2 | 127.0.0.1 |
 
-Therefore, **this single event does not establish that a brute-force attack occurred**. It confirms that Windows failed-logon auditing is functioning and provides an event that can be investigated using authentication, source, timestamp, and process information.
+The events occurred in two pairs approximately 15 minutes apart. The source address was `127.0.0.1`, indicating that the authentication activity originated from the local host rather than an external network source.
+
+The investigated event showed:
+- **Logon Type 2:** interactive/local logon
+- **Status `0xC000006D`:** failed logon
+- **Authentication Package:** Negotiate
+- **Process:** `svchost.exe`
+
+## Analysis
+
+The repeated 4625 events demonstrate how a SOC analyst can identify and investigate failed authentication activity.
+
+However, these events were intentionally generated as part of a controlled lab exercise. Therefore, they **do not represent a confirmed brute-force attack**.
+
+A real brute-force investigation would require additional context such as:
+- Higher-frequency repeated failures
+- Target account information
+- Source IP reputation and ownership
+- Successful logon following repeated failures
+- Multiple affected accounts
+- Authentication patterns over time
+- Confirmation that the activity was unauthorized
+
+This lab demonstrates the distinction between **detecting repeated authentication failures** and **confirming malicious activity**.
 
 ## Evidence
 
-Screenshot evidence will be added to the `screenshots/` folder.
+Screenshots:
+- `screenshots/01-event-4625-failed-logon.png`
+- `screenshots/02-multiple-4625-events.png`
 
-Recommended evidence filename:
+## Final Conclusion
 
-`01-event-4625-failed-logon.png`
+**Finding:** Repeated failed logon events were detected and successfully investigated.
 
-## Next Investigation Step
+**Classification:** Controlled lab activity — not a confirmed brute-force attack.
 
-Generate a small number of additional controlled failed logons and compare the resulting 4625 events for:
-
-- Timestamp
-- Target account
-- Logon type
-- Source address
-- Failure reason
-- Frequency/pattern
-
-The goal is to practice distinguishing isolated authentication failures from repeated suspicious activity.
+**Key SOC lesson:** An authentication alert should be validated with context before being classified as a security incident.
 
 ## Skills Practiced
 - Windows Event Viewer
 - Security log analysis
 - Event ID 4625 investigation
 - Authentication event analysis
+- Frequency and timeline analysis
 - Basic alert triage
 - Evidence collection
 - Incident documentation

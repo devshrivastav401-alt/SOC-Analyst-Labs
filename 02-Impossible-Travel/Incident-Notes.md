@@ -22,14 +22,23 @@
 5. The activity is suspicious and consistent with an Impossible Travel alert.
 6. Different IP addresses alone do not confirm malicious activity.
 
-## Validation Considerations
-- Check whether the user was legitimately traveling.
-- Check for VPN or proxy usage.
-- Validate IP geolocation accuracy.
-- Check whether the account is shared or used by multiple people.
-- Confirm the activity with the user or appropriate identity/security team.
+## Validation
+- User confirmation was not available in this lab.
+- VPN/proxy evidence was not available.
+- IP geolocation was not independently verified.
+- No additional suspicious activity was provided in the simulated dataset.
 
-## Current Status
-**Under Investigation**
+## Final Assessment
+**Inconclusive — Further Investigation Required**
+
+The alert remains suspicious, but there is insufficient evidence to confirm account compromise.
+
+## SOC L1 Recommended Actions
+- Validate the activity with the user.
+- Check VPN or proxy usage.
+- Verify IP geolocation.
+- Review additional authentication events.
+- Check for other suspicious activity associated with the account.
+- Escalate if additional evidence indicates compromise.
 
 > All login data and IP addresses in this lab are simulated for training purposes.

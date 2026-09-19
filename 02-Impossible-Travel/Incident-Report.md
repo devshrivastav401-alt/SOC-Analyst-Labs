@@ -21,19 +21,22 @@ The 20-minute gap between the two geographically distant logins makes the activi
 
 However, the alert does not by itself prove account compromise. Possible legitimate or detection-related explanations include VPN/proxy use, inaccurate IP geolocation, shared-account usage, or legitimate activity.
 
-## 5. Finding
-**Initial Finding: Suspicious — Under Investigation**
+## 5. Validation
+The simulated lab does not provide user confirmation, VPN/proxy evidence, independent IP geolocation verification, or additional suspicious authentication activity.
+
+## 6. Final Finding
+**Inconclusive — Further Investigation Required**
 
 The evidence supports the Impossible Travel alert, but there is insufficient evidence in this simulated dataset to confirm malicious activity or account compromise.
 
-## 6. Recommended Response
+## 7. Recommended Response
 1. Validate the activity with the user.
 2. Check VPN/proxy and IP geolocation information.
 3. Review additional authentication events around the alert.
 4. Check for other suspicious activity associated with the account.
 5. Escalate to the appropriate analyst/team if additional evidence indicates compromise.
 
-## 7. SOC L1 Lesson
+## 8. SOC L1 Lesson
 An Impossible Travel alert should be treated as an investigation lead, not automatically as a confirmed incident. SOC L1 should validate the timeline, source information, user context, and supporting evidence before escalating.
 
 > **Lab Classification:** Controlled / Simulated training exercise. No real account compromise is claimed.

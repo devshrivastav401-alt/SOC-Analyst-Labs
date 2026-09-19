@@ -45,7 +45,6 @@ The alert is not treated as confirmed account compromise. Further validation is 
 
 ## Evidence
 
-- 01-simulated-login-events.png
 - 02-login-events.png
 - 03-investigation-finding.png
 

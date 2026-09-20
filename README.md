@@ -1,44 +1,47 @@
 # 🛡️ SOC Analyst Labs
 
-Hands-on SOC Analyst L1 investigation portfolio built through controlled cybersecurity labs using Windows Security Logs, authentication events, phishing analysis, and alert triage.
+Hands-on SOC Analyst L1 investigation portfolio focused on practical alert triage, Windows event analysis, authentication investigations, phishing analysis, IOC identification, and incident documentation.
 
-## 🎯 Objective
+## 👋 Portfolio Overview
 
-This repository documents practical SOC Analyst L1 skills through investigation-based labs.
+This repository demonstrates how I approach common SOC Analyst L1 investigation tasks using controlled lab scenarios and evidence-based analysis.
 
-The focus is on:
+**4 investigation labs completed:** brute-force investigation, impossible-travel investigation, phishing investigation, and Windows event analysis.
 
-- Alert triage
-- Log analysis
-- Authentication investigation
-- IOC identification
-- Timeline analysis
-- Evidence collection
-- Incident documentation
-- Evidence-based assessment
-- Basic incident response
+### 🔎 What This Portfolio Demonstrates
+
+- Alert triage and initial validation
+- Windows Security Event analysis
+- Authentication and failed-logon investigation
+- IOC identification and phishing analysis
+- Timeline and evidence correlation
+- Analyst notes and incident reporting
+- Evidence-based assessment and escalation decisions
+- Basic incident-response workflow
 
 ## 🧪 Completed Labs
 
-| # | Lab | Main Skills |
-|---|---|---|
-| 01 | [Brute Force Investigation](./01-Brute-Force-Investigation/) | Windows Event ID 4625, failed-logon analysis, authentication triage |
-| 02 | [Impossible Travel Investigation](./02-Impossible-Travel/) | Authentication logs, IP comparison, timeline analysis |
-| 03 | [Phishing Investigation](./03-Phishing-Investigation/) | Email analysis, IOC extraction, phishing indicators |
-| 04 | [Windows Event Analysis](./04-Windows-Event-Analysis/) | Event IDs 4625, 4624, 4688, 4104, 4672, 4648 |
+| # | Lab | Key Skills | Evidence |
+|---|---|---|---|
+| 01 | [Brute Force Investigation](./01-Brute-Force-Investigation/) | Event ID 4625, failed-logon analysis, authentication triage | Screenshots + notes + report |
+| 02 | [Impossible Travel Investigation](./02-Impossible-Travel/) | Authentication logs, IP comparison, timeline analysis | Screenshots + notes + report |
+| 03 | [Phishing Investigation](./03-Phishing-Investigation/) | Email analysis, IOC extraction, phishing indicators | Screenshots + notes + report |
+| 04 | [Windows Event Analysis](./04-Windows-Event-Analysis/) | Event IDs 4625, 4624, 4688, 4104, 4672, 4648 | Screenshots + notes + report |
 
-## 🔍 Investigation Approach
+**Recommended starting point:** [Lab 01 — Brute Force Investigation](./01-Brute-Force-Investigation/)
 
-Each lab follows a basic SOC L1 workflow:
+## 🔍 Investigation Workflow
+
+Each lab follows a repeatable SOC L1 workflow:
 
 1. Identify the alert or suspicious activity.
 2. Collect relevant evidence.
 3. Analyze logs, events, or indicators.
 4. Build a timeline where applicable.
 5. Validate the activity using available context.
-6. Document findings.
-7. Determine whether the evidence supports escalation.
-8. Record recommended next steps.
+6. Document observations and findings.
+7. Assess whether the available evidence supports escalation.
+8. Record recommended next steps and limitations.
 
 ## 🛠️ Tools & Technologies
 
@@ -62,9 +65,9 @@ Each lab follows a basic SOC L1 workflow:
 | 4672 | Special Privileges Assigned |
 | 4648 | Logon Using Explicit Credentials |
 
-## 📁 Repository Structure
+## 📁 Lab Documentation Structure
 
-Each completed lab uses a consistent documentation pattern:
+Each completed lab uses a consistent structure:
 
 ```text
 LAB/
@@ -75,11 +78,14 @@ LAB/
     └── evidence screenshots
 ```
 
-The screenshots provide supporting evidence, while the notes and reports document the investigation and analyst assessment.
+- **README.md** — lab objective, workflow, and evidence overview
+- **Incident-Notes.md** — investigation observations and analyst reasoning
+- **Incident-Report.md** — concise incident summary, findings, assessment, and next steps
+- **Screenshots/** — supporting visual evidence
 
 ## 🔐 Security & Privacy
 
-The repository is public and is designed for portfolio use.
+The repository is public and designed for portfolio use.
 
 - Lab scenarios are controlled or simulated unless explicitly stated otherwise.
 - No real credentials, API keys, private keys, or authentication tokens are intentionally included.
@@ -92,7 +98,7 @@ These labs are created for cybersecurity learning and SOC Analyst L1 portfolio p
 
 ## 🚀 Current Learning Focus
 
-After completing these investigation labs, the next focus areas are:
+Next areas of practice:
 
 - SIEM fundamentals
 - Splunk

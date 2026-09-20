@@ -1,9 +1,11 @@
 # 01 - Brute Force Investigation
 
 ## Objective
+
 Investigate failed Windows logon activity, validate failed-logon auditing, and determine whether the observed activity provides evidence of a brute-force attack.
 
 ## Environment
+
 - Windows Security Event Logs
 - Windows Event Viewer
 - Local Security Policy
@@ -11,6 +13,7 @@ Investigate failed Windows logon activity, validate failed-logon auditing, and d
 - Controlled lab activity
 
 ## Investigation Workflow
+
 1. Review Windows Security logs.
 2. Enable auditing for logon events.
 3. Apply the policy with `gpupdate /force`.
@@ -23,7 +26,9 @@ Investigate failed Windows logon activity, validate failed-logon auditing, and d
 ## Completed Steps
 
 ### 1. Audit Configuration
+
 **Audit Logon Events** was configured for:
+
 - Success
 - Failure
 
@@ -32,9 +37,11 @@ The policy was successfully applied using:
 `gpupdate /force`
 
 ### 2. Controlled Failed Logons
+
 Controlled incorrect-password attempts were generated on the Windows host to validate failed-logon auditing and practice investigating repeated authentication failures.
 
 ### 3. Event ID 4625 Identified
+
 Windows Security Event ID **4625** was observed.
 
 Key fields from the investigated events:
@@ -66,6 +73,7 @@ Four Event ID 4625 records were observed during the controlled test.
 The events occurred in two pairs approximately 15 minutes apart. The source address was `127.0.0.1`, indicating that the authentication activity originated from the local host rather than an external network source.
 
 The investigated event showed:
+
 - **Logon Type 2:** interactive/local logon
 - **Status `0xC000006D`:** failed logon
 - **Authentication Package:** Negotiate
@@ -78,6 +86,7 @@ The repeated 4625 events demonstrate how a SOC analyst can identify and investig
 However, these events were intentionally generated as part of a controlled lab exercise. Therefore, they **do not represent a confirmed brute-force attack**.
 
 A real brute-force investigation would require additional context such as:
+
 - Higher-frequency repeated failures
 - Target account information
 - Source IP reputation and ownership
@@ -90,9 +99,8 @@ This lab demonstrates the distinction between **detecting repeated authenticatio
 
 ## Evidence
 
-Screenshots:
-- `screenshots/01-event-4625-failed-logon.png`
-- `screenshots/02-multiple-4625-events.png`
+- `Screenshots/01-event-4625-failed-logon.png`
+- `Screenshots/02-multiple-4625-events.png`
 
 ## Final Conclusion
 
@@ -103,6 +111,7 @@ Screenshots:
 **Key SOC lesson:** An authentication alert should be validated with context before being classified as a security incident.
 
 ## Skills Practiced
+
 - Windows Event Viewer
 - Security log analysis
 - Event ID 4625 investigation

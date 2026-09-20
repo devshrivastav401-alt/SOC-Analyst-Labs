@@ -10,6 +10,10 @@ Analyze Windows Security Event Logs as a SOC L1 Analyst and investigate authenti
 - Windows Security Logs
 - Windows Event XML View
 
+## Investigation Workflow
+
+**Objective → Evidence → Event Analysis → Correlation → Assessment → Next Steps**
+
 ## Events Investigated
 
 | Event ID | Purpose | Finding |
@@ -37,9 +41,17 @@ Analyze Windows Security Event Logs as a SOC L1 Analyst and investigate authenti
 
 The available evidence shows repeated failed interactive logon attempts, but the reviewed events do not establish a remote brute-force attack or successful compromise.
 
-Further monitoring is appropriate if failed attempts become frequent or clustered, remote source IPs appear, suspicious successful logons occur, or unusual process activity is observed.
+The Event ID 4688 observation was assessed from the event context available in this lab; an individual process-creation event should be correlated with additional endpoint and security telemetry before drawing a broader conclusion.
 
-## Evidence
+## Recommended Next Steps
+
+- Continue monitoring failed authentication activity for frequency and clustering.
+- Investigate any remote source IPs if they appear.
+- Correlate suspicious successful logons with preceding failures.
+- Review related process and PowerShell activity when available.
+- Escalate when additional evidence indicates compromise.
+
+## Evidence Files
 
 - `Screenshots/01-event-4625-xml-analysis.png`
 - `Screenshots/02-event-4624-successful-logon.png`

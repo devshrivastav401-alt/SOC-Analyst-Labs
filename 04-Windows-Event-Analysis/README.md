@@ -1,0 +1,49 @@
+# 🧪 Lab 04 — Windows Event Analysis
+
+## Objective
+Analyze Windows Security Event Logs as a SOC L1 Analyst and investigate authentication, process, PowerShell, privilege, and credential-related events.
+
+## Tools Used
+- Windows Event Viewer
+- Windows Security Logs
+- Windows Event XML View
+
+## Events Investigated
+
+| Event ID | Purpose | Finding |
+|---|---|---|
+| 4625 | Failed Logon | 9 failed interactive logon events observed |
+| 4624 | Successful Logon | SYSTEM service logon observed |
+| 4688 | Process Creation | `lsass.exe` process creation observed |
+| 4104 | PowerShell Script Block | No events found |
+| 4672 | Special Privileges | No events found |
+| 4648 | Explicit Credentials | Local explicit credential usage observed |
+
+## Key Findings
+- 9 Event ID 4625 records were identified.
+- The investigated 4625 event showed Logon Type 2 (Interactive).
+- The investigated 4625 event showed an incorrect-password status.
+- No remote IP address was recorded in the investigated 4625 event.
+- The 9 failed logons were distributed across different times rather than appearing as one short burst.
+- Event ID 4624 showed a SYSTEM service logon (Logon Type 5).
+- Event ID 4688 showed `lsass.exe` being created by `wininit.exe`.
+- No Event ID 4104 or 4672 records were available in the investigated log.
+- Event ID 4648 showed explicit credential usage in a local context.
+
+## Analyst Assessment
+The available evidence shows repeated failed interactive logon attempts, but the reviewed events do not establish a remote brute-force attack or successful compromise.
+
+Further monitoring is appropriate if failed attempts become frequent or clustered, remote source IPs appear, suspicious successful logons occur, or unusual process activity is observed.
+
+## Evidence
+Screenshots belong in the `Screenshots/` directory.
+
+## Skills Demonstrated
+- Windows Event Viewer
+- Windows Security Event Analysis
+- Event ID Investigation
+- XML Event Analysis
+- Log Correlation
+- SOC L1 Investigation
+- Evidence Documentation
+- Incident Assessment

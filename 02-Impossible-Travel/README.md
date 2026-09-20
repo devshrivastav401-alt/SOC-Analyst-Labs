@@ -1,9 +1,11 @@
 # 02 - Impossible Travel Investigation
 
 ## Objective
+
 Investigate a simulated Impossible Travel alert as a SOC Analyst L1 and document the investigation using evidence.
 
 ## Scenario
+
 A successful login for the same user account was observed from two geographically distant locations within a very short time period.
 
 ## Simulated Login Events
@@ -30,8 +32,9 @@ The alert is not treated as confirmed account compromise. Further validation is 
 
 ## Evidence
 
-- 02-login-events.png
-- 03-investigation-finding.png
+- `Screenshots/02-impossible-travel-finding.png`
+- `Screenshots/03-investigation-finding.png`
+- `Screenshots/04-final-assessment.png`
 
 ## SOC L1 Skills Practiced
 

@@ -14,6 +14,8 @@ Investigate failed Windows logon activity, validate failed-logon auditing, and d
 
 ## Investigation Workflow
 
+**Objective → Evidence → Validation → Findings → Assessment → Next Steps**
+
 1. Review Windows Security logs.
 2. Enable auditing for logon events.
 3. Apply the policy with `gpupdate /force`.
@@ -23,28 +25,9 @@ Investigate failed Windows logon activity, validate failed-logon auditing, and d
 7. Generate additional controlled failures and compare events.
 8. Document findings and response considerations.
 
-## Completed Steps
+## Evidence Reviewed
 
-### 1. Audit Configuration
-
-**Audit Logon Events** was configured for:
-
-- Success
-- Failure
-
-The policy was successfully applied using:
-
-`gpupdate /force`
-
-### 2. Controlled Failed Logons
-
-Controlled incorrect-password attempts were generated on the Windows host to validate failed-logon auditing and practice investigating repeated authentication failures.
-
-### 3. Event ID 4625 Identified
-
-Windows Security Event ID **4625** was observed.
-
-Key fields from the investigated events:
+**Event ID 4625 — Failed Logon**
 
 | Field | Observed Value |
 |---|---|
@@ -59,9 +42,7 @@ Key fields from the investigated events:
 | Authentication Package | Negotiate |
 | Process | `C:\Windows\System32\svchost.exe` |
 
-## Investigation Findings
-
-Four Event ID 4625 records were observed during the controlled test.
+Four Event ID 4625 records were observed during the controlled test:
 
 | Time | Event ID | Logon Type | Source Address |
 |---|---:|---:|---|
@@ -70,7 +51,9 @@ Four Event ID 4625 records were observed during the controlled test.
 | 7:59:32 PM | 4625 | 2 | 127.0.0.1 |
 | 7:59:32 PM | 4625 | 2 | 127.0.0.1 |
 
-The events occurred in two pairs approximately 15 minutes apart. The source address was `127.0.0.1`, indicating that the authentication activity originated from the local host rather than an external network source.
+## Investigation Findings
+
+The events occurred in two pairs approximately 15 minutes apart. The source address was `127.0.0.1`, indicating that the observed authentication activity originated from the local host rather than an external network source.
 
 The investigated event showed:
 
@@ -79,13 +62,13 @@ The investigated event showed:
 - **Authentication Package:** Negotiate
 - **Process:** `svchost.exe`
 
-## Analysis
+## Analyst Assessment
 
 The repeated 4625 events demonstrate how a SOC analyst can identify and investigate failed authentication activity.
 
-However, these events were intentionally generated as part of a controlled lab exercise. Therefore, they **do not represent a confirmed brute-force attack**.
+However, these events were intentionally generated as part of a controlled lab exercise. They **do not represent a confirmed brute-force attack**.
 
-A real brute-force investigation would require additional context such as:
+A real investigation would require additional context such as:
 
 - Higher-frequency repeated failures
 - Target account information
@@ -97,18 +80,14 @@ A real brute-force investigation would require additional context such as:
 
 This lab demonstrates the distinction between **detecting repeated authentication failures** and **confirming malicious activity**.
 
-## Evidence
+## Recommended Next Steps
+
+For a real alert, correlate authentication events over time and investigate the source, account, successful logons, and related endpoint activity before escalation.
+
+## Evidence Files
 
 - `Screenshots/01-event-4625-failed-logon.png`
 - `Screenshots/02-multiple-4625-events.png`
-
-## Final Conclusion
-
-**Finding:** Repeated failed logon events were detected and successfully investigated.
-
-**Classification:** Controlled lab activity — not a confirmed brute-force attack.
-
-**Key SOC lesson:** An authentication alert should be validated with context before being classified as a security incident.
 
 ## Skills Practiced
 
@@ -120,3 +99,13 @@ This lab demonstrates the distinction between **detecting repeated authenticatio
 - Basic alert triage
 - Evidence collection
 - Incident documentation
+
+## Final Conclusion
+
+**Finding:** Repeated failed logon events were detected and successfully investigated.
+
+**Classification:** Controlled lab activity — not a confirmed brute-force attack.
+
+**Key SOC lesson:** An authentication alert should be validated with context before being classified as a security incident.
+
+> This is a controlled lab created for SOC Analyst L1 portfolio practice.

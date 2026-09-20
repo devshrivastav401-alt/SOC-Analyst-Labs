@@ -1,9 +1,11 @@
-# 🧪 Lab 04 — Windows Event Analysis
+# 04 - Windows Event Analysis
 
 ## Objective
+
 Analyze Windows Security Event Logs as a SOC L1 Analyst and investigate authentication, process, PowerShell, privilege, and credential-related events.
 
 ## Tools Used
+
 - Windows Event Viewer
 - Windows Security Logs
 - Windows Event XML View
@@ -20,6 +22,7 @@ Analyze Windows Security Event Logs as a SOC L1 Analyst and investigate authenti
 | 4648 | Explicit Credentials | Local explicit credential usage observed |
 
 ## Key Findings
+
 - 9 Event ID 4625 records were identified.
 - The investigated 4625 event showed Logon Type 2 (Interactive).
 - The investigated 4625 event showed an incorrect-password status.
@@ -31,14 +34,22 @@ Analyze Windows Security Event Logs as a SOC L1 Analyst and investigate authenti
 - Event ID 4648 showed explicit credential usage in a local context.
 
 ## Analyst Assessment
+
 The available evidence shows repeated failed interactive logon attempts, but the reviewed events do not establish a remote brute-force attack or successful compromise.
 
 Further monitoring is appropriate if failed attempts become frequent or clustered, remote source IPs appear, suspicious successful logons occur, or unusual process activity is observed.
 
 ## Evidence
-Screenshots belong in the `Screenshots/` directory.
+
+- `Screenshots/01-event-4625-xml-analysis.png`
+- `Screenshots/02-event-4624-successful-logon.png`
+- `Screenshots/03-event-4688-process-creation.png`
+- `Screenshots/04-initial-event-review.png`
+- `Screenshots/05-event-4672-no-events.png`
+- `Screenshots/06-event-4648-explicit-credentials.png`
 
 ## Skills Demonstrated
+
 - Windows Event Viewer
 - Windows Security Event Analysis
 - Event ID Investigation
@@ -47,3 +58,5 @@ Screenshots belong in the `Screenshots/` directory.
 - SOC L1 Investigation
 - Evidence Documentation
 - Incident Assessment
+
+> This is a controlled lab created for SOC Analyst L1 portfolio practice.

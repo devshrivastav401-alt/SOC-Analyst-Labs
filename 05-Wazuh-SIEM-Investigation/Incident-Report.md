@@ -1,8 +1,8 @@
-# 🚨 Incident Report — Wazuh SIEM Investigation
+# 🚨 Incident Report — Microsoft Sentinel SIEM Investigation
 
 ## Executive Summary
 
-A Wazuh SIEM alert was investigated on a controlled Windows endpoint. The investigation focused on alert triage, event analysis, evidence correlation, and documentation.
+A Microsoft Sentinel incident/alert was investigated in a controlled cloud SIEM environment. The investigation focused on alert triage, KQL-based log analysis, evidence correlation, and incident documentation.
 
 **Final assessment:** TBD
 
@@ -11,9 +11,9 @@ A Wazuh SIEM alert was investigated on a controlled Windows endpoint. The invest
 | Field | Details |
 |---|---|
 | Incident Type | TBD |
-| Detection Source | Wazuh SIEM |
-| Endpoint | TBD |
-| Alert/Rule ID | TBD |
+| Detection Source | Microsoft Sentinel |
+| Workspace | TBD |
+| Incident/Alert ID | TBD |
 | Severity | TBD |
 | Date/Time | TBD |
 | Status | Investigation in progress |
@@ -32,7 +32,14 @@ A Wazuh SIEM alert was investigated on a controlled Windows endpoint. The invest
 - **Hostname:** TBD
 - **Event ID:** TBD
 - **Process:** TBD
-- **File/URL:** TBD
+- **IOC:** TBD
+
+## KQL Analysis
+
+**Query:**
+TBD
+
+**Result:** TBD
 
 ## Timeline
 
@@ -40,15 +47,15 @@ TBD
 
 ## Assessment
 
-TBD — provide an evidence-based assessment without assuming malicious intent from a single alert.
+TBD — provide an evidence-based assessment based on correlated telemetry.
 
 ## Recommended Actions
 
-1. Validate the activity with endpoint/user context.
-2. Correlate related events in Wazuh.
-3. Review additional telemetry if available.
-4. Escalate according to the defined SOC workflow when supported by evidence.
+1. Validate the activity with available user and endpoint context.
+2. Correlate related events in Sentinel.
+3. Review additional telemetry when available.
+4. Escalate according to the SOC workflow when supported by evidence.
 
 ## Analyst Notes
 
-This report documents a controlled cybersecurity lab exercise for SOC Analyst L1 portfolio development.
+This report documents a controlled Microsoft Sentinel lab exercise for SOC Analyst L1 portfolio development.

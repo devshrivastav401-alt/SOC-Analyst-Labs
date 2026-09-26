@@ -6,7 +6,7 @@ Hands-on SOC Analyst L1 investigation portfolio focused on practical alert triag
 
 This repository demonstrates how I approach common SOC Analyst L1 investigation tasks using controlled lab scenarios and evidence-based analysis.
 
-**4 investigation labs completed:** brute-force investigation, impossible-travel investigation, phishing investigation, and Windows event analysis.
+**4 investigation labs completed; Lab 05 — Microsoft Sentinel SIEM Investigation is in progress.**
 
 ### 🔎 What This Portfolio Demonstrates
 
@@ -27,6 +27,7 @@ This repository demonstrates how I approach common SOC Analyst L1 investigation 
 | 02 | [Impossible Travel Investigation](./02-Impossible-Travel/) | Authentication logs, IP comparison, timeline analysis | Screenshots + notes + report |
 | 03 | [Phishing Investigation](./03-Phishing-Investigation/) | Email analysis, IOC extraction, phishing indicators | Screenshots + notes + report |
 | 04 | [Windows Event Analysis](./04-Windows-Event-Analysis/) | Event IDs 4625, 4624, 4688, 4104, 4672, 4648 | Screenshots + notes + report |
+| 05 | [Microsoft Sentinel SIEM Investigation](./05-Wazuh-SIEM-Investigation/) | Sentinel, KQL, cloud SIEM, alert triage, log correlation | In progress |
 
 **Recommended starting point:** [Lab 01 — Brute Force Investigation](./01-Brute-Force-Investigation/)
 
@@ -51,6 +52,8 @@ Each lab follows a repeatable SOC L1 workflow:
 - Windows Authentication Events
 - Basic IOC Analysis
 - Email/Phishing Analysis
+- Microsoft Sentinel
+- Kusto Query Language (KQL)
 - GitHub
 - Markdown Documentation
 
@@ -101,6 +104,8 @@ These labs are created for cybersecurity learning and SOC Analyst L1 portfolio p
 Next areas of practice:
 
 - SIEM fundamentals
+- Microsoft Sentinel
+- Kusto Query Language (KQL)
 - Splunk
 - EDR concepts
 - Alert investigation
@@ -110,4 +115,4 @@ Next areas of practice:
 ---
 
 **Portfolio:** SOC Analyst L1 Hands-on Investigation Labs  
-**Status:** 4 Labs Completed ✅
+**Status:** 4 Labs Completed + 1 In Progress 🚧

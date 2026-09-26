@@ -1,12 +1,12 @@
-# 📝 Incident Notes — Wazuh SIEM Investigation
+# 📝 Incident Notes — Microsoft Sentinel SIEM Investigation
 
 ## Alert Overview
 
 - **Date/Time:** TBD
-- **Endpoint:** TBD
-- **Alert/Rule ID:** TBD
-- **Severity/Level:** TBD
-- **Source:** Wazuh
+- **Workspace:** TBD
+- **Incident/Alert ID:** TBD
+- **Severity:** TBD
+- **Detection Source:** Microsoft Sentinel
 - **Status:** Investigation in progress
 
 ## Initial Observation
@@ -17,13 +17,13 @@ TBD — record what triggered the investigation and why the alert requires revie
 
 | Evidence | Observation |
 |---|---|
-| Wazuh Alert | TBD |
-| Rule Details | TBD |
+| Sentinel Incident/Alert | TBD |
+| Analytics Rule | TBD |
+| KQL Query | TBD |
 | Windows Event | TBD |
-| Source/Target | TBD |
-| User Account | TBD |
+| User/Entity | TBD |
 | Timestamp | TBD |
-| IOC(s) | TBD |
+| IP/IOC | TBD |
 
 ## Timeline
 
@@ -39,13 +39,13 @@ TBD — record what triggered the investigation and why the alert requires revie
 
 ## Assessment
 
-TBD — document whether the available evidence supports benign activity, suspicious activity, or escalation.
+TBD — document an evidence-based assessment.
 
 ## Limitations
 
 - Investigation is based on controlled lab telemetry.
-- Findings are limited to the evidence collected during the exercise.
-- Additional endpoint/network context may be required for a production investigation.
+- Findings are limited to available Sentinel data.
+- Additional endpoint/network context may be required in a production investigation.
 
 ## Next Steps
 

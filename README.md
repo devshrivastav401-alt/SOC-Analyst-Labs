@@ -27,7 +27,7 @@ This repository demonstrates how I approach common SOC Analyst L1 investigation 
 | 02 | [Impossible Travel Investigation](./02-Impossible-Travel/) | Authentication logs, IP comparison, timeline analysis | Screenshots + notes + report |
 | 03 | [Phishing Investigation](./03-Phishing-Investigation/) | Email analysis, IOC extraction, phishing indicators | Screenshots + notes + report |
 | 04 | [Windows Event Analysis](./04-Windows-Event-Analysis/) | Event IDs 4625, 4624, 4688, 4104, 4672, 4648 | Screenshots + notes + report |
-| 05 | [Microsoft Sentinel SIEM Investigation](./05-Wazuh-SIEM-Investigation/) | Sentinel, KQL, cloud SIEM, alert triage, log correlation | In progress |
+| 05 | [Microsoft Sentinel SIEM Investigation](./05-Microsoft-Sentinel-Investigation/) | Sentinel, KQL, cloud SIEM, alert triage, log correlation | In progress |
 
 **Recommended starting point:** [Lab 01 — Brute Force Investigation](./01-Brute-Force-Investigation/)
 

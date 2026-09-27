@@ -1,12 +1,12 @@
 # 🛡️ SOC Analyst Labs
 
-Hands-on SOC Analyst L1 investigation portfolio focused on practical alert triage, Windows event analysis, authentication investigations, phishing analysis, IOC identification, and incident documentation.
+Hands-on SOC Analyst L1 investigation portfolio focused on practical alert triage, Windows event analysis, authentication investigations, phishing analysis, IOC identification, SIEM investigations, and incident documentation.
 
 ## 👋 Portfolio Overview
 
 This repository demonstrates how I approach common SOC Analyst L1 investigation tasks using controlled lab scenarios and evidence-based analysis.
 
-**4 investigation labs completed; Lab 05 — Microsoft Sentinel SIEM Investigation is in progress.**
+**4 investigation labs completed; Lab 05 — Splunk SIEM Investigation is in progress.**
 
 ### 🔎 What This Portfolio Demonstrates
 
@@ -14,12 +14,13 @@ This repository demonstrates how I approach common SOC Analyst L1 investigation 
 - Windows Security Event analysis
 - Authentication and failed-logon investigation
 - IOC identification and phishing analysis
+- SIEM log querying and investigation
 - Timeline and evidence correlation
 - Analyst notes and incident reporting
 - Evidence-based assessment and escalation decisions
 - Basic incident-response workflow
 
-## 🧪 Completed Labs
+## 🧪 Completed / Active Labs
 
 | # | Lab | Key Skills | Evidence |
 |---|---|---|---|
@@ -27,7 +28,7 @@ This repository demonstrates how I approach common SOC Analyst L1 investigation 
 | 02 | [Impossible Travel Investigation](./02-Impossible-Travel/) | Authentication logs, IP comparison, timeline analysis | Screenshots + notes + report |
 | 03 | [Phishing Investigation](./03-Phishing-Investigation/) | Email analysis, IOC extraction, phishing indicators | Screenshots + notes + report |
 | 04 | [Windows Event Analysis](./04-Windows-Event-Analysis/) | Event IDs 4625, 4624, 4688, 4104, 4672, 4648 | Screenshots + notes + report |
-| 05 | [Microsoft Sentinel SIEM Investigation](./05-Microsoft-Sentinel-Investigation/) | Sentinel, KQL, cloud SIEM, alert triage, log correlation | In progress |
+| 05 | [Splunk SIEM Investigation](./05-Splunk-SIEM-Investigation/) | Splunk, SPL, Windows logs, alert triage, timeline correlation | In progress |
 
 **Recommended starting point:** [Lab 01 — Brute Force Investigation](./01-Brute-Force-Investigation/)
 
@@ -50,10 +51,10 @@ Each lab follows a repeatable SOC L1 workflow:
 - Windows Security Logs
 - Windows Event XML
 - Windows Authentication Events
+- Splunk
+- Search Processing Language (SPL)
 - Basic IOC Analysis
 - Email/Phishing Analysis
-- Microsoft Sentinel
-- Kusto Query Language (KQL)
 - GitHub
 - Markdown Documentation
 
@@ -101,12 +102,9 @@ These labs are created for cybersecurity learning and SOC Analyst L1 portfolio p
 
 ## 🚀 Current Learning Focus
 
-Next areas of practice:
-
+- Splunk SIEM and SPL
 - SIEM fundamentals
-- Microsoft Sentinel
-- Kusto Query Language (KQL)
-- Splunk
+- Microsoft Sentinel concepts
 - EDR concepts
 - Alert investigation
 - SOC L1 interview preparation
@@ -115,4 +113,4 @@ Next areas of practice:
 ---
 
 **Portfolio:** SOC Analyst L1 Hands-on Investigation Labs  
-**Status:** 4 Labs Completed + 1 In Progress 🚧
+**Status:** 4 Labs Completed + Lab 05 In Progress 🚧

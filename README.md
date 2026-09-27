@@ -104,7 +104,7 @@ These labs are created for cybersecurity learning and SOC Analyst L1 portfolio p
 
 - Splunk SIEM and SPL
 - SIEM fundamentals
-- Microsoft Sentinel concepts
+- Microsoft Sentinel concepts (future expansion)
 - EDR concepts
 - Alert investigation
 - SOC L1 interview preparation

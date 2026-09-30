@@ -1,35 +1,41 @@
-# Incident Report — Microsoft Sentinel
+# Incident Report — Splunk SIEM Investigation
 
 ## 1. Executive Summary
 _To be completed after the investigation._
 
-## 2. Alert / Incident Details
+## 2. Incident Details
 - Incident ID: TBD
 - Severity: TBD
 - Detection Time: TBD
-- Data Source: TBD
+- Data Source: Windows Security Event Logs
 
-## 3. Investigation
-### Initial Observation
+## 3. Initial Observation
 TBD
 
-### Analysis
+## 4. Investigation
+### Authentication Analysis
 TBD
 
-### Evidence
+### Process Analysis
+TBD
+
+### Timeline
+TBD
+
+## 5. Findings
+TBD
+
+## 6. Indicators of Compromise
+TBD
+
+## 7. MITRE ATT&CK Mapping
+TBD
+
+## 8. Evidence
 See the `Screenshots/` directory.
 
-## 4. Findings
+## 9. Conclusion
 TBD
 
-## 5. Indicators of Compromise
-TBD
-
-## 6. MITRE ATT&CK Mapping
-TBD
-
-## 7. Conclusion
-TBD
-
-## 8. Recommended Actions
+## 10. Recommended Actions
 TBD

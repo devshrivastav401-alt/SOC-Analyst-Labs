@@ -2,45 +2,95 @@
 
 ## 🎯 Objective
 
-Perform a SOC Analyst L1 investigation of suspicious Active Directory activity, focusing on authentication, account discovery, group membership, and Windows security telemetry.
+Perform a SOC Analyst L1 investigation of authentication, account discovery, group enumeration, privileged logon activity, and PowerShell telemetry using Windows endpoint logs.
+
+> **Lab status:** ✅ Completed
+
+> **Environment note:** The test workstation was confirmed to be **WORKGROUP / not domain-joined**. Therefore, this lab is documented as an **AD-style Windows authentication and discovery investigation**, not as a confirmed Active Directory attack or compromise.
 
 ## 🔎 Investigation Focus
 
-- Active Directory fundamentals
-- Authentication and account activity
-- Windows Security Event analysis
-- Suspicious account and group activity
+- Windows authentication analysis
+- Local account and group activity
+- Failed authentication detection
+- Successful-logon correlation
+- Privileged logon analysis
+- PowerShell Script Block Logging
 - IOC identification
 - Timeline correlation
 - MITRE ATT&CK mapping
 - Evidence-based incident assessment
 
-> **Lab status:** In Progress
-
 ## 🛠️ Tools
 
-- Windows Active Directory / Security telemetry
 - Windows Event Viewer
+- Windows Security Event Log
 - PowerShell
 - GitHub
 - Markdown Documentation
 
 ## 📋 Investigation Workflow
 
-1. Prepare the controlled AD investigation environment.
-2. Identify suspicious authentication or directory activity.
-3. Collect relevant Windows security events.
-4. Analyze users, groups, hosts, timestamps, and event details.
-5. Correlate related events into a timeline.
-6. Identify indicators and supporting evidence.
-7. Map observed behavior to MITRE ATT&CK where applicable.
-8. Assess severity and determine whether activity is benign or suspicious.
-9. Document findings and recommended next steps.
-10. Capture screenshots as evidence.
+1. Check the endpoint and domain state.
+2. Identify local users and groups.
+3. Review recent Windows Security telemetry.
+4. Investigate Event ID 4799 for group enumeration.
+5. Generate controlled failed authentication attempts.
+6. Analyze Event ID 4625.
+7. Check Event ID 4624 for successful-logon correlation.
+8. Review Event ID 4672 for privileged activity.
+9. Review PowerShell Event ID 4104 Script Block Logging.
+10. Correlate events into a timeline.
+11. Map relevant behavior to MITRE ATT&CK.
+12. Produce an evidence-based final assessment.
+
+## 🧪 Investigation Results
+
+| Event ID | Finding | Assessment |
+|---|---|---|
+| **4799** | Local group membership enumeration | 🟢 Benign in lab context |
+| **4625** | 3 controlled failed Administrator authentications | 🟡 Simulated detection activity |
+| **4624** | No correlated successful Administrator logon | 🟢 No evidence of successful compromise |
+| **4672** | SYSTEM privileged logon activity | 🟢 Normal SYSTEM activity |
+| **4104** | PowerShell Script Block Logging reviewed | 🟢 No clear malicious activity identified |
+
+### Authentication Test
+
+Three intentionally invalid password attempts were made against the local `Administrator` account using:
+
+`runas /user:DEV\\Administrator cmd`
+
+The resulting Event ID 4625 records showed:
+
+- **Status:** `0xC000006D`
+- **SubStatus:** `0xC000006A`
+- **Logon Type:** 2
+- **Source:** `::1`
+- **Target:** `Administrator`
+
+This demonstrates how a SOC analyst can validate Windows authentication-failure telemetry in a controlled environment.
+
+## 🧠 Analyst Takeaways
+
+- Do not treat every 4625 as an attack; establish context and look for patterns.
+- Do not correlate unrelated 4624 events simply because they occur near a 4625.
+- Event 4672 does not automatically mean privilege escalation.
+- Event 4104 does not automatically mean malicious PowerShell.
+- Domain status must be verified before claiming an Active Directory compromise.
+- Evidence-based correlation is more important than isolated event IDs.
 
 ## 📸 Evidence
 
-Screenshots will document the investigation environment, relevant AD activity, Windows event details, timeline evidence, and final assessment.
+The investigation includes screenshots documenting:
+
+- Environment/domain verification
+- Local group enumeration
+- Failed authentication events
+- Successful authentication correlation check
+- Privileged logon analysis
+- PowerShell Operational logging
+
+See the `Screenshots/` directory for evidence.
 
 ## 📁 Documentation
 
@@ -50,9 +100,9 @@ Screenshots will document the investigation environment, relevant AD activity, W
 
 ## 🔐 Security & Privacy
 
-Use only controlled lab data. Do not upload passwords, access tokens, API keys, or sensitive organizational information.
+Only controlled lab activity and non-sensitive endpoint telemetry should be documented. Never upload passwords, access tokens, API keys, personal account identifiers, or sensitive organizational information.
 
 ---
 
 **Portfolio:** SOC Analyst L1 Hands-on Investigation Labs  
-**Status:** In Progress 🚧
+**Status:** Completed ✅

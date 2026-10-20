@@ -1,77 +1,67 @@
-# 🛡️ SOC Analyst Labs
+# SOC Analyst L1 Investigation Portfolio
 
-Hands-on SOC Analyst L1 investigation portfolio focused on practical alert triage, Windows event analysis, authentication investigations, phishing analysis, IOC identification, SIEM investigations, and incident documentation.
+A collection of controlled, simulated investigations documenting foundational SOC Analyst Level 1 workflows, including Windows authentication analysis, phishing triage, suspicious-login review, and incident reporting.
 
-## 👋 Portfolio Overview
+## Portfolio Overview
 
-This repository demonstrates how I approach common SOC Analyst L1 investigation tasks using controlled lab scenarios and evidence-based analysis.
+This repository demonstrates a structured approach to reviewing security telemetry, validating suspicious activity, documenting evidence, and making appropriately cautious assessments. The scenarios are for learning and portfolio practice; they are not claims of real-world incidents.
 
-**4 investigation labs completed; Lab 05 — Splunk SIEM Investigation is in progress.**
+**Current status:** Five investigation folders are documented. Splunk has **not** been started and is listed as a planned next lab.
 
-### 🔎 What This Portfolio Demonstrates
+## Investigation Labs
 
-- Alert triage and initial validation
-- Windows Security Event analysis
-- Authentication and failed-logon investigation
-- IOC identification and phishing analysis
-- SIEM log querying and investigation
-- Timeline and evidence correlation
-- Analyst notes and incident reporting
-- Evidence-based assessment and escalation decisions
-- Basic incident-response workflow
-
-## 🧪 Completed / Active Labs
-
-| # | Lab | Key Skills | Evidence |
+| # | Investigation | Focus | Status |
 |---|---|---|---|
-| 01 | [Brute Force Investigation](./01-Brute-Force-Investigation/) | Event ID 4625, failed-logon analysis, authentication triage | Screenshots + notes + report |
-| 02 | [Impossible Travel Investigation](./02-Impossible-Travel/) | Authentication logs, IP comparison, timeline analysis | Screenshots + notes + report |
-| 03 | [Phishing Investigation](./03-Phishing-Investigation/) | Email analysis, IOC extraction, phishing indicators | Screenshots + notes + report |
-| 04 | [Windows Event Analysis](./04-Windows-Event-Analysis/) | Event IDs 4625, 4624, 4688, 4104, 4672, 4648 | Screenshots + notes + report |
-| 05 | [Splunk SIEM Investigation](./05-Splunk-SIEM-Investigation/) | Splunk, SPL, Windows logs, alert triage, timeline correlation | In progress |
+| 01 | [Brute Force Investigation](./01-Brute-Force-Investigation/) | Windows Event ID 4625, failed-logon analysis, authentication triage | Documented lab |
+| 02 | [Impossible Travel Investigation](./02-Impossible-Travel/) | Simulated sign-ins, location/time comparison, validation and escalation criteria | Documented lab |
+| 03 | [Phishing Investigation](./03-Phishing-Investigation/) | Email indicators, lookalike domains, suspicious URL analysis, user-impact validation | Documented lab |
+| 04 | [Windows Event Analysis](./04-Windows-Event-Analysis/) | Windows Security events, process creation, authentication context and telemetry limitations | Documented lab |
+| 05 | [Windows Authentication and Account Discovery Investigation](./05-Active-Directory-Attack-Investigation/) | Local account/group activity, Event IDs 4799/4625/4624/4672/4104, timeline correlation | Documentation completed; standalone Windows host |
 
-**Recommended starting point:** [Lab 01 — Brute Force Investigation](./01-Brute-Force-Investigation/)
+> **Lab 05 environment limitation:** The workstation was in a WORKGROUP and was not joined to an Active Directory domain. It must not be presented as a real Active Directory attack or domain compromise.
 
-## 🔍 Investigation Workflow
+## Investigation Workflow
 
-Each lab follows a repeatable SOC L1 workflow:
+The labs use a repeatable workflow where applicable:
 
-1. Identify the alert or suspicious activity.
-2. Collect relevant evidence.
-3. Analyze logs, events, or indicators.
-4. Build a timeline where applicable.
-5. Validate the activity using available context.
-6. Document observations and findings.
-7. Assess whether the available evidence supports escalation.
-8. Record recommended next steps and limitations.
+1. Define the alert or investigation question.
+2. Identify the available log sources and environment.
+3. Collect relevant events and indicators.
+4. Review timestamps, accounts, source information, and event context.
+5. Correlate related activity without assuming that nearby events are connected.
+6. Record findings, uncertainty, and evidence limitations.
+7. Assess whether the evidence supports escalation.
+8. Document recommended next steps.
 
-## 🛠️ Tools & Technologies
+## Tools and Concepts Practised
 
 - Windows Event Viewer
-- Windows Security Logs
-- Windows Event XML
-- Windows Authentication Events
-- Splunk
-- Search Processing Language (SPL)
-- Basic IOC Analysis
-- Email/Phishing Analysis
-- GitHub
-- Markdown Documentation
+- Windows Security and PowerShell Operational logs
+- PowerShell for local event review and collection
+- Windows authentication event analysis
+- Basic phishing indicator analysis
+- Timeline construction and incident documentation
+- Markdown and GitHub
 
-## 📊 Event IDs Practiced
+**Not yet practised in this repository:** Splunk, Search Processing Language (SPL), and SIEM-based log ingestion/correlation. These are planned learning goals, not completed experience.
 
-| Event ID | Description |
+## Windows Event IDs Referenced
+
+| Event ID | Meaning |
 |---|---|
-| 4625 | Failed Logon |
-| 4624 | Successful Logon |
-| 4688 | Process Creation |
-| 4104 | PowerShell Script Block Logging |
-| 4672 | Special Privileges Assigned |
-| 4648 | Logon Using Explicit Credentials |
+| 4624 | Successful logon |
+| 4625 | Failed logon |
+| 4648 | Logon using explicit credentials |
+| 4672 | Special privileges assigned to a new logon |
+| 4688 | Process creation |
+| 4799 | Security-enabled local group membership enumeration |
+| 4104 | PowerShell script block logging |
 
-## 📁 Lab Documentation Structure
+An event ID alone does not establish malicious activity. Findings must be assessed using event details, host and account context, surrounding telemetry, and the limitations of the available data.
 
-Each completed lab uses a consistent structure:
+## Lab Documentation
+
+Where present, each lab contains:
 
 ```text
 LAB/
@@ -79,38 +69,29 @@ LAB/
 ├── Incident-Notes.md
 ├── Incident-Report.md
 └── Screenshots/
-    └── evidence screenshots
 ```
 
-- **README.md** — lab objective, workflow, and evidence overview
-- **Incident-Notes.md** — investigation observations and analyst reasoning
-- **Incident-Report.md** — concise incident summary, findings, assessment, and next steps
-- **Screenshots/** — supporting visual evidence
+- **README.md** — objective, scope, workflow, and findings overview
+- **Incident-Notes.md** — detailed observations and analyst reasoning
+- **Incident-Report.md** — concise summary, assessment, and recommended actions
+- **Screenshots/** — supporting evidence, where captured and uploaded
 
-## 🔐 Security & Privacy
+Check each lab's folder for the evidence actually available; the presence of a documentation link alone does not imply that screenshots are present.
 
-The repository is public and designed for portfolio use.
+## Planned Next Lab
 
-- Lab scenarios are controlled or simulated unless explicitly stated otherwise.
-- No real credentials, API keys, private keys, or authentication tokens are intentionally included.
-- Simulated indicators are clearly identified in the relevant documentation.
-- Sensitive personal or organizational information should not be added to future lab evidence.
+**Lab 06 — Splunk SIEM Investigation (not started)**
 
-## ⚠️ Disclaimer
+Planned work includes learning basic SPL, ingesting or using suitable Windows event data, running searches, investigating authentication activity, and documenting results with evidence. This lab will be marked in progress only after practical work begins.
 
-These labs are created for cybersecurity learning and SOC Analyst L1 portfolio practice. Simulated scenarios and indicators are used where stated. The investigations should not be interpreted as reports of real-world incidents.
+## Security and Scope
 
-## 🚀 Current Learning Focus
+- Scenarios are simulated or controlled unless explicitly stated otherwise.
+- No real-world incident or account compromise is claimed.
+- Do not upload passwords, tokens, private keys, or sensitive personal or organizational data.
+- Simulated IP addresses, identities, and indicators should be labelled as such.
+- Conclusions should not exceed what the available evidence supports.
 
-- Splunk SIEM and SPL
-- SIEM fundamentals
-- Microsoft Sentinel concepts (future expansion)
-- EDR concepts
-- Alert investigation
-- SOC L1 interview preparation
-- Additional hands-on detection and investigation practice
+## Career Focus
 
----
-
-**Portfolio:** SOC Analyst L1 Hands-on Investigation Labs  
-**Status:** 4 Labs Completed + Lab 05 In Progress 🚧
+The portfolio supports continued preparation for entry-level SOC Analyst roles. Next priorities are hands-on SIEM practice, improving evidence quality, and continuing alert-triage and incident-response exercises.

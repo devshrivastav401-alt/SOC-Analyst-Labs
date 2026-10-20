@@ -1,4 +1,4 @@
-# 🚨 Incident Report — Windows Authentication & AD-Style Investigation
+# Incident Report — Windows Authentication and Account Discovery Investigation
 
 ## Executive Summary
 

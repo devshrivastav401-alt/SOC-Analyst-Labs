@@ -1,4 +1,4 @@
-# 📝 Incident Notes — Windows Authentication & AD-Style Investigation
+# Incident Notes — Windows Authentication and Account Discovery Investigation
 
 ## Alert Overview
 
